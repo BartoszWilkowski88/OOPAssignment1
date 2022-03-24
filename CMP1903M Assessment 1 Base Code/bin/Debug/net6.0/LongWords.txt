@@ -1,1 +1,6 @@
-Oriented, programming, programming, paradigm, abstract, blueprint, specific, concrete, represent, categories, attributes, attributes, instance, attributes, specific, functions, available, functions, specific, 
+Oriented, programming, programming, paradigm, abstract, blueprint, specific, concrete, represent, categories, attributes, attributes, instance, attributes, specific, functions, available, functions, specific, Data:
+Sentences:	6
+Total, Characters:, 506
+Vowels:, 189		
+Upper, Case:	9
+Lower, punctuation, whitespaces, 

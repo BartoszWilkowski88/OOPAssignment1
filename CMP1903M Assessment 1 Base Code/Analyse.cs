@@ -28,21 +28,27 @@ namespace CMP1903M_Assessment_1_Base_Code
             //5. Number of lower case letters
             List<int> values = new List<int>();
             //Initialise all the values in the list to '0'
-            for (int i = 0; i<5; i++)
+            for (int i = 0; i<6; i++)
             {
                 values.Add(0);
             }
             //check for values then return them
             foreach (char c in input)
             {
+                if (c == '*')
+                {
+                    break;
+                }
                 frqc[(int)c]++;
                 if (char.IsUpper(c))
                 {
                     values[3]++;
+                    values[5]++;
                 }
                 else if (char.IsLower(c))
                 {
                     values[4]++;
+                    values[5]++;
                 }
                 foreach (char vow in vowels)
                 {

@@ -18,6 +18,7 @@ namespace CMP1903M_Assessment_1_Base_Code
             Console.WriteLine("Consonants: {0}", numbers[2]);
             Console.WriteLine("Upper Case Letters: {0}", numbers[3]);
             Console.WriteLine("Lower Case Letters: {0}", numbers[4]);
+            Console.WriteLine("Total Characters: {0}", numbers[5]);
         }
     }
 }
