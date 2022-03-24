@@ -26,7 +26,7 @@ namespace CMP1903M_Assessment_1_Base_Code
             }
             //variables
             string lngwrdsfile = File.ReadAllText("LongWords.txt");
-            string[] lngwrds = input.Split(' ', '.', '*', ',');
+            string[] lngwrds = input.Split(' ', '.', ',');
             string[] lngwrdscheck = lngwrdsfile.Split(' ', '.', '*', ',');
             int ind = 0;
             bool exists = false;
@@ -42,6 +42,10 @@ namespace CMP1903M_Assessment_1_Base_Code
                 }
                 if (File.Exists("LongWords.txt") && lngwrds[ind].Length > 7 && exists == false)
                 {
+                    if (lngwrds[ind].StartsWith("*"))
+                    {
+                        break;
+                    }
                     using (StreamWriter tw = new StreamWriter("LongWords.txt", true))
                     {
                         tw.Write(lngwrds[ind] + ", ");
