@@ -28,13 +28,19 @@ namespace CMP1903M_Assessment_1_Base_Code
             //manual input
             if (ch == "1")
             {
-                Console.Write("Enter text: ");
-                output = Console.ReadLine();
+                output = input.manualTextInput();
             }
             //file input
             else if (ch == "2")
             {
-                output = input.fileTextInput("file.txt");
+                Console.WriteLine("Enter a file name (Note: it has to be in this directory) pre-set example: file.txt");
+                var fileName = Console.ReadLine();
+                while (!File.Exists(fileName))
+                {
+                    Console.WriteLine("Enter correct file path e.g. file.txt: ");
+                    fileName = Console.ReadLine();
+                }
+                output = input.fileTextInput(fileName);
             }
             //Check for long words 7+ and add them to the file.
             LongWords.checkForLongWords(output);
