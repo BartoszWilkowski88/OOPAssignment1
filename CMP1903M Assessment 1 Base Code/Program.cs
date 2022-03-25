@@ -28,8 +28,7 @@ namespace CMP1903M_Assessment_1_Base_Code
             //manual input
             if (ch == "1")
             {
-                Console.Write("Enter text: ");
-                output = Console.ReadLine();
+                output = input.manualTextInput();
             }
             //file input
             else if (ch == "2")
