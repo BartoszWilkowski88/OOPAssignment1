@@ -35,11 +35,6 @@ namespace CMP1903M_Assessment_1_Base_Code
             {
                 Console.WriteLine("Enter a file name (Note: it has to be in this directory) pre-set example: file.txt");
                 var fileName = Console.ReadLine();
-                while (!File.Exists(fileName))
-                {
-                    Console.WriteLine("Enter correct file path e.g. file.txt: ");
-                    fileName = Console.ReadLine();
-                }
                 output = input.fileTextInput(fileName);
             }
             //Check for long words 7+ and add them to the file.
