@@ -18,7 +18,6 @@ namespace CMP1903M_Assessment_1_Base_Code
             //variables
             string vowels = "aeiouAEIOU";
             string consonants = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ";
-            string sentences = ".";
             int[] frqc = new int[(int)char.MaxValue];
             //List of integers to hold the first five measurements:
             //1. Number of sentences
@@ -31,6 +30,14 @@ namespace CMP1903M_Assessment_1_Base_Code
             for (int i = 0; i<6; i++)
             {
                 values.Add(0);
+            }
+            string[] sntcs = input.Split(' ');
+            foreach (string lines in sntcs)
+            {
+                if (lines.EndsWith('.') || lines.EndsWith('*'))
+                {
+                    values[0]++;
+                }
             }
             //check for values then return them
             foreach (char c in input)
@@ -62,13 +69,6 @@ namespace CMP1903M_Assessment_1_Base_Code
                     if (cons == c)
                     {
                         values[2]++;
-                    }
-                }
-                foreach (char flstp in sentences)
-                {
-                    if (flstp == c)
-                    {
-                        values[0]++;
                     }
                 }
             }
