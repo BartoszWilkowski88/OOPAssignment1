@@ -72,7 +72,7 @@ namespace CMP1903M_Assessment_1_Base_Code
                     }
                 }
             }
-            // Calculate character frequency
+            //Calculate character frequency
             for (int i = 0; i < (int)char.MaxValue; i++)
             {
                 if (frqc[i] > 0 && char.IsLetter((char)i))

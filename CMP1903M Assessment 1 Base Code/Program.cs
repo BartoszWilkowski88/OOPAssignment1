@@ -19,9 +19,9 @@ namespace CMP1903M_Assessment_1_Base_Code
             //Create 'Input' object
             //Get either manually entered text, or text from a file
             var input = new Input();
-            Console.Write("Enter (1) for manual input or (2) for file input: ");
+            Console.Write("Enter (1) for manual input or (2) for file input or (3) for test file: ");
             string ch = Console.ReadLine();
-            while (ch != "1" && ch != "2")
+            while (ch != "1" && ch != "2" && ch != "3")
             {   
                 Console.Write("Enter correct number: ");
                 ch = Console.ReadLine(); 
@@ -38,6 +38,11 @@ namespace CMP1903M_Assessment_1_Base_Code
                 var fileName = Console.ReadLine();
                 output = input.fileTextInput(fileName);
             }
+            else if (ch == "3")
+            {
+                var test = new Test();
+                output = test.testFile();
+            }
             //Check for long words 7+ and add them to the file.
             LongWords.checkForLongWords(output);
             //Create an 'Analyse' object
@@ -48,7 +53,14 @@ namespace CMP1903M_Assessment_1_Base_Code
             parameters = analyse.analyseText(output);
             //Report the results of the analysis
             var report = new Report();
-            report.outputConsole(parameters);
+            if (ch == "1" || ch == "2")
+            {
+                report.outputConsole(parameters);
+            }
+            else if (ch == "3")
+            {
+                report.testOutputConsole(parameters);
+            }
             //TO ADD: Get the frequency of individual letters?
         }
     }
