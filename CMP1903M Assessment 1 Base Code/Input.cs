@@ -9,7 +9,7 @@ namespace CMP1903M_Assessment_1_Base_Code
     public class Input
     {
         //Handles the text input for Assessment 1
-        string text = "nothing";
+        string text = null;
         
         //Method: manualTextInput
         //Arguments: none
@@ -28,8 +28,38 @@ namespace CMP1903M_Assessment_1_Base_Code
         //Gets text input from a .txt file
         public string fileTextInput(string fileName)
         {
-            text = File.ReadAllText(fileName);
-            return text;
+            while (string.IsNullOrEmpty(fileName))
+            {
+                Console.WriteLine("Enter correct file path e.g. file.txt: ");
+                fileName = Console.ReadLine();
+            }
+            while (true)
+            {
+                if (File.Exists(fileName))
+                {
+                    text = File.ReadAllText(fileName);
+                    return text;
+                    break;
+                }
+                try
+                {
+                    if (!File.Exists(fileName))
+                    {
+                        throw new DirectoryNotFoundException();
+                    }
+                    text = File.ReadAllText(fileName);
+                    return text;
+                }
+                catch (DirectoryNotFoundException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                finally
+                {
+                    Console.WriteLine("Enter correct file path: ");
+                    fileName = Console.ReadLine();
+                }
+            }
         }
 
     }
