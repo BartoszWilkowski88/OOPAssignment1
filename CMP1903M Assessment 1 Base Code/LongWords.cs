@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace CMP1903M_Assessment_1_Base_Code
 {
+    //addittional class example
     class LongWords
     {
+        //example of additional method
+        //example of encapsulation
         private void createFile()
         {
             //Create long words file
@@ -17,6 +20,7 @@ namespace CMP1903M_Assessment_1_Base_Code
                 lngwrdfile.Close();
             }
         }
+        //example of additional method
         public void checkForLongWords(string input)
         {
             //Check if file already exists

@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace CMP1903M_Assessment_1_Base_Code
 {
-    class Program
+    //Data abstraction
+    abstract class Program
     {
-        static void Main()
+        private static void Main()
         {
             var LongWords = new LongWords();
             //Local list of integers to hold the first five measurements of the text
@@ -50,8 +51,5 @@ namespace CMP1903M_Assessment_1_Base_Code
             report.outputConsole(parameters);
             //TO ADD: Get the frequency of individual letters?
         }
-        
-        
-    
     }
 }
